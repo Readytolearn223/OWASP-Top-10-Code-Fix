@@ -1,0 +1,50 @@
+
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part 1 
+
+The fix removes the ability for users to supply any userId in the URL and instead returns data only for the authenticated user. This closes the Broken Access Control vulnerability because attackers can no longer change the userId to view other accounts. By  requiring authentication  and enforcing access control checks ,the endpoint ensures that each user can only access their own data ,protecting sensitive information and improving overall security. 
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part 2 
+
+
+The fix addresses the vulnerability by removing the user_id parameter from the URL and instead using the authenticated user's ID to fetch the account. This prevents attackers from accessing another user's data by simply changing the user_id in the request. By requiring authentication and enforcing strict access checks, the endpoint ensures that each user only accesses their own account. 
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part 3 
+
+
+The fix replaces the use of MD5,a weak and outdated hashing algorithm, with bcrypt ,a modern password hashing function designed for security. Unlike MD5,bcrypt automatically applies salting and multiple rounds of hashing, making it resistant to brute force, rainbow table, and even collision attacks. By securely hashing and verifying passwords ,this fix ensures that even if an attacker gains access to the database . Recovering the original password is extremely difficult, greatly improving overall security.
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part 4 
+
+The fix replaces the weak SHA-1 hashing with PBKDF2, using SHA-256, a modern and secure key derivation function. It adds a random salt and performs multiple iterations, making it resistant to brute force and rainbow table attacks. By securely hashing and verifying passwords with salt and iteration ,this approach prevents attackers from easily recovering passwords if the database is compromised . Greatly improving overall security 
+
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part 5 
+
+
+The fix addresses the SQL Injection vulnerability by using a parameterized query, which separates user input from the SQL command. This prevents attackers from injecting malicious SQL through the username parameter, eliminating the risk of unauthorized data access modification. By safely handling user input and avoiding string concatenation, the code will ensure that queries execute as intended, greatly improving database security. 
+
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part 6
+
+
+The fix addresses the NoSQL Injection vulnerability by sanitizing user input to allow only alphanumeric characters before using it in the database query. This prevents attackers from injecting malicious MongoDB operators or crafted input to manipulate the query. By enforcing strict input validation and using the sanitized value in find one ,the endpoint will ensure only authorized data is returned ,improving security and protecting sensitive user information.
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part 7
+
+
+The fix addresses the Insecure Design vulnerability by requiring identity verification via a secure, time-limited token sent to the user's email before allowing a password reset. This ensures that only the account owner can reset their password. Additionally, the new password is hashed before being stored, preventing the storage of plaintext passwords. Together  ,these measures prevent attackers from resetting other users' passwords and protect sensitive account data, significantly improving security. 
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part 8
+
+
+The fix addresses the Software and Data Integrity vulnerability by using Sub Resource Integrity to ensure that the external script has not been tampered with. By including a cryptographic hash of the script and the cross-origin attribute. The browser will block execution if the script is modified, preventing malicious code from running 
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part 9
+
+The fix addresses the Server-Side Request Forgery vulnerability by validating user-supplied URLS against a whitelist of trusted domains and allowing only http or https schemes. This prevents attackers from supplying URLS that could access internal systems, sensitive resources, or other unintended endpoints. By restricting requests to safe authorized locations, the server is protected from unauthorized access and potential exploitation, significantly improving security 
+
+# How My Changes Addresses The Vulnerability& Improve Security For Part10 
+ 
+The fix addresses the Identification and Authentication vulnerability by never storing passwords in plaintext and instead using a strong hashing mechanism. By hashing passwords with a secure algorithm and verifying user input against the hash, the system prevents attackers from easily obtaining credentials if the database is compromised. This approach protects sensitive user information, mitigates the risk of unauthorized access, and significantly improves overall authentication security. 
+
