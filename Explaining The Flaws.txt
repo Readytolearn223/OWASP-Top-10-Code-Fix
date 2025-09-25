@@ -1,0 +1,44 @@
+
+# Security Flaw For Part 1 
+
+The endpoints directly return user data based on a userId from the URL without verifying whether the requester is authorized. This is a Broken Access Control vulnerability because anyone can access another user's information by changing the userId, potentially exposing sensitive data and violating privacy rules. Proper access checks are required to ensure users can only view their own accounts 
+
+
+# Security Flaw For Part 2
+The endpoint returns user account data based on the user_id from the URL without checking if the requester is authorized. This Broken Access Control vulnerability allows anyone to access another user's information by changing the user_id, potentially exposing sensitive data. Proper access checks are needed to ensure users can only view their own accounts  
+
+
+# Security Flaw For Part  3 
+
+The code hashes passwords using MD5, which is a weak and outdated algorithm vulnerable to collisions and brute-force attacks. Storing passwords this way can allow attackers to recover them if the database is compromised. Secure password storage should use modern algorithms like bcrypt, Argon2, or PBKDF2, which include salting and multiple iterations to enhance security. 
+
+# Security Flaw For Part  4
+
+The code hashes passwords using SHA-1, which is outdated and vulnerable to collision and brute-force attacks. This weak cryptography makes it easy for attackers to recover passwords if the database is compromised.
+
+# Security Flaw For Part 5 
+The code directly concatenates user input into a SQL query, making it vulnerable to SQL Injection. An attacker could manipulate the username parameter to execute arbitrary SQL commands, potentially accessing or modifying sensitive data.
+
+
+# Security Flaw For Part 6 
+The code directly uses user input from req.query.username in a database query, making it vulnerable to NoSQL Injection. An attacker could craft input to manipulate the query and access or modify unauthorized data. 
+
+
+# Security Flaw For Part 7
+
+The code allows users to reset their password by simply providing an email and a new password, without verifying their identity. This Insecure Design flaw can allow attackers to reset accounts they do not own, compromising users' accounts  
+
+# Security Flaw For Part 8 
+
+The issue is that it loads an external script directly without verifying its integrity. This could allow malicious code injection if the source is compromised 
+
+# Security Flaw For Part 9
+The code takes the URL from the user input and fetches it directly, making it vulnerable to SSRF. An attacker could supply internal or restricted URLs to access sensitive internal services or resources, 
+
+
+# Security Flaw For Part 10
+
+The code compares the user's input password directly with the stored password, which is likely stored in plaintext. This is an Identification and Authentication flaw because plaintext passwords can be easily stolen if the database is compromised.
+
+
+
